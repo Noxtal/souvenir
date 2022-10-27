@@ -1,0 +1,16 @@
+{{define "body"}}
+{{if .}}
+<h1>Enter your masterkey</h1>
+<form action="/api/login" method="post">
+    <input type="text" name="masterkey" placeholder="masterkey">
+    <input type="submit" value="Login">
+</form>
+{{else}}
+<h1 style="margin-bottom: 0;">Choose a masterkey</h1>
+<p>(you will not see it again)</p>
+<form action="/api/register" method="post">
+    <input type="text" name="masterkey" placeholder="masterkey">
+    <input type="submit" value="Register">
+</form>
+{{end}}
+{{end}}

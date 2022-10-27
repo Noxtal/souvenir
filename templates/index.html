@@ -1,0 +1,21 @@
+{{define "body"}}
+<div>
+    <h1>souvenir <button onclick="location.href='/logout'" class="corner">Logout</button></h1>
+    <p>Saved passwords</p>
+    <div class="services">
+        {{range .}}
+        <button onclick="location.href='/services/{{.}}'">{{.}}</button>
+        {{end}}
+    </div>
+
+    <div>
+        <form action="/api/edit" method="post">
+            <b>+</b>
+            <input type="text" name="service" placeholder="service">
+            <input type="text" name="username" placeholder="username">
+            <input type="text" name="password" placeholder="password">
+            <input type="submit" value="Add">
+        </form>
+    </div>
+</div>
+{{end}}

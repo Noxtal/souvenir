@@ -1,0 +1,23 @@
+{{define "layout"}}
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>souvenir</title>
+    <link rel="shortcut icon" href="/static/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="/static/fonts/roboto.css" rel="stylesheet">
+</head>
+
+<body>
+    <div style="text-align: center;">
+        <img src="/static/icon.png" alt="icon" style="width: 75px; margin-bottom: 0;">
+    </div>
+    {{template "body" .}}
+    <footer>Made with &#128156; by <a href="https://github.com/Noxtal">Noxtal</a> using <a href="https://go.dev">Go</a><sup>©</sup>
+    </footer>
+</body>
+
+</html>
+{{end}}

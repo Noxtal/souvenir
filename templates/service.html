@@ -1,0 +1,13 @@
+{{define "body"}}
+<div>
+    <h1>{{.Service}}<button onclick="location.href='/'" class="corner">Back</button></h1>
+    <div>
+        <form action="/api/edit" method="post">
+            <input type="text" name="service" value="{{.Service}}" hidden>
+            <input type="text" name="username" value="{{.Username}}">
+            <input type="text" name="password" value="{{.Password}}">
+            <input type="submit" value="Update">
+        </form>
+    </div>
+</div>
+{{end}}
