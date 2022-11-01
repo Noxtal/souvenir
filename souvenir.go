@@ -16,6 +16,7 @@ import (
 	"os/exec"
 	"path/filepath"
 	"runtime"
+	"strings"
 	"time"
 
 	"github.com/gorilla/mux"
@@ -155,7 +156,7 @@ func SessionPassword(cookie string) ([]byte, bool) {
 }
 
 func main() {
-	fmt.Println("souvenir v0.1 by Noxtal")
+	fmt.Println("souvenir v0.2.0 by Noxtal")
 	log.Println("Establishing ideal hashing cost...")
 	// https://stackoverflow.com/questions/4443476/optimal-bcrypt-work-factor
 	var elapsed int64
@@ -192,7 +193,7 @@ func main() {
 	log.Println("Listening on port 4444...")
 	err := BrowseTo("http://localhost:4444")
 	if err != nil {
-		panic(err)
+		log.Println("Could not open browser:", err)
 	}
 	err = http.ListenAndServe("localhost:4444", r)
 	if err != nil {
@@ -459,6 +460,11 @@ func ApiEdit(w http.ResponseWriter, r *http.Request) {
 
 			service, ok := r.Form["service"]
 			if !ok {
+				w.WriteHeader(http.StatusBadRequest)
+				return
+			}
+
+			if strings.TrimSpace(service[0]) == "" {
 				w.WriteHeader(http.StatusBadRequest)
 				return
 			}
