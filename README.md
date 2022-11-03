@@ -32,6 +32,7 @@ An open-source, straightforward but secure password manager with a built-in web 
 ## Etymology
 **souvenir** (n.)
 > 1775, "a remembrance or memory," from French souvenir (12c.), from Old French noun use of souvenir (v.) "to remember, come to mind," from Latin subvenire "come to mind," from sub "up from below" (see sub-) + venire "to come," from a suffixed form of PIE root *gwa- "to go, come." Meaning "token of remembrance, memento" is first recorded 1782.
+([vocabulary.com](https://www.vocabulary.com/dictionary/souvenir))
 
 ## TODO
 - [ ] Changing masterkey
